@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const StyledForm = styled.form`
     text-align: center;
+    font-size: 1.25rem;
     background-color: white;
     margin: 2% auto;
     width: 75%;
@@ -38,9 +39,14 @@ const StyledForm = styled.form`
     }
 
     input {
+        font-size: 1.25rem;
         margin: 1.5%;
-        width: 200px;
+        width: 275px;
         text-align: center;
+    }
+    
+    select {
+        font-size: 1.25rem
     }
 
     .dis  {
