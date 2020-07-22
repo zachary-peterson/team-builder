@@ -4,8 +4,18 @@ import styled from 'styled-components'
 const StyledMember = styled.div`
   width: 45%;
   margin: 1% auto;
-  border: 2px solid black;
+  border: 3px solid black;
 
+  &:hover {
+    background-color: #ec3944;
+    color: white;
+  }
+
+  @media(max-width: 768px){
+    flex-direction: column;
+    width: 75%;
+    padding: 5%;
+  }
 `
 
 function Member(props) {

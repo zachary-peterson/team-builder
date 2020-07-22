@@ -34,9 +34,17 @@ const MemberObjs = styled.div`
   display: flex;
   flex-flow: row wrap;
   background-color: white;
-  margin-top: 2.5%;
-  border: 2.5px solid black;
-  border-bottom: 0;
+  margin: 2.5% auto 2%;
+  border: 5px solid black;
+  width: 95%;
+  text-align: center;
+
+  @media(max-width: 768px){
+    flex-direction: column;
+    margin: 2% auto;
+
+  }
+
 `
 
 const Container = styled.div`
@@ -46,8 +54,27 @@ const Container = styled.div`
 
   header {
     background-color: black;
-    margin-top: 0;
+    padding: 0.01%;
     color: white;
+    font-size: 2.5rem;
+    line-height: 0.1;
+    font-family: Monospace;
+
+    h1 {
+      font-size: 6rem;
+    }
+
+    h2 {
+      text-decoration: underline;
+      padding-bottom: 2.5px;
+    }
+  }
+
+  footer {
+    background-color: black;
+    color: white;
+    padding: 1% 0;
+    font-family: Monospace;
     font-size: 2.5rem;
   }
 `
@@ -75,7 +102,8 @@ function App() {
   return (
     <Container className="App">
       <header>
-        <h1>Lambda Dev Team</h1>
+        <h1>Build Week</h1>
+        <h2>Team Builder</h2>
       </header>
         <div>
           <Form 
@@ -94,6 +122,7 @@ function App() {
             }
           )}
         </MemberObjs>
+        <footer><strong>Web33</strong></footer>
     </Container>
 )
 
