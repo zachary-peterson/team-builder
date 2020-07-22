@@ -7,8 +7,9 @@ const StyledMember = styled.div`
   border: 3px solid black;
 
   &:hover {
-    background-color: #ec3944;
+    background-color: #ff5460;
     color: white;
+    text-shadow: 2px 2px #000000;
   }
 
   @media(max-width: 768px){

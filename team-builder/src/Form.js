@@ -11,7 +11,10 @@ const StyledForm = styled.form`
 
     h2 {
         font-family: Monospace;
+        margin-top: 0;
         font-size: 3rem;
+        line-height: 5;
+        border-bottom: 10px double black;
     }
     
     div {
