@@ -11,11 +11,13 @@ const StyledForm = styled.form`
     border: 5px solid black;
 
     h2 {
+        background-color: #ab1f27;
+        color: white;
         font-family: Monospace;
         margin-top: 0;
         font-size: 3rem;
         line-height: 5;
-        border-bottom: 10px double black;
+        border-bottom: 10px double white;
     }
     
     div {
@@ -52,7 +54,7 @@ const StyledForm = styled.form`
     .dis  {
         text-align: right;
         margin: 2.5% 4%;
-        color: crimson;
+        color: #ab1f27;
         font-size: 1.75rem;
     }
 
