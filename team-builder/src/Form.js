@@ -1,4 +1,31 @@
 import React from 'react';
+import App from './App';
+import styled from 'styled-components';
+
+const StyledForm = styled.form`
+    text-align: center;
+    background-color: white;
+    margin: 2% auto;
+    width: 75%;
+    border: 5px solid black;
+    
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2%;
+    }
+
+    button  {
+        margin: 2.5% auto;    
+    }
+
+    input {
+        margin: 1.5%;
+    }
+
+`
+
 
 function Form(props){
     const {values, update, submit} = props;
@@ -10,16 +37,13 @@ function Form(props){
 
     const onSubmit = event => {
         event.preventDefault();
-        submit(event.data);
+        submit();
     }
     
     return (
-        <form className='form container' onSubmit={onSubmit}>
+        <StyledForm onSubmit={onSubmit}>
         
-        <div className='form-group submit'>
-            <h2>Add to your Team</h2>
-            <button disabled={!values.name || !values.email || !values.role} >submit</button>
-        </div>
+        <h2>Add to your Team</h2>
         
         <div className='form-group input'>
             <h3>Information:</h3>
@@ -59,7 +83,9 @@ function Form(props){
             </select>
         </div>
 
-        </form>
+        <button disabled={!values.name || !values.email || !values.role} onSubmit={onSubmit}>Submit</button>
+
+        </StyledForm>
     )
 }
 

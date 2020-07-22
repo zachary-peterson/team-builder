@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import Form from './Form';
 import Member from './Member'
 import './App.css';
@@ -9,6 +10,11 @@ const initialTeamRoster = [
     email: 'gabriel@lambdaschool.com',
     role: 'Project Lead'
   },
+  {
+    name: 'Zach',
+    email: 'zachary-peterson@lambdastudents.com',
+    role: 'Front End Developer'
+  },
 ]
 
 const initialForm = {
@@ -16,6 +22,35 @@ const initialForm = {
   email: '',
   role: ''
 }
+
+const StyledHeader = styled.div`
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+  font-size: 2.5rem;
+`
+
+const MemberObjs = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  background-color: white;
+  margin-top: 2.5%;
+  border: 2.5px solid black;
+  border-bottom: 0;
+`
+
+const Container = styled.div`
+  text-align: center;
+  margin-top: 0;
+  background-color: #ec3944;
+
+  header {
+    background-color: black;
+    margin-top: 0;
+    color: white;
+    font-size: 2.5rem;
+  }
+`
 
 function App() {
   const [teamMembers, setTeamMembers] = useState(initialTeamRoster);
@@ -32,16 +67,14 @@ function App() {
       role: formValues.role
     }
 
-    if(!formValues.name || !formValues.email || formValues.role) return;
-
-    setTeamMembers(newTeamMember);
+    setTeamMembers([...teamMembers, newTeamMember]);
+    setFormValues(initialForm);
   }
 
-  console.log(teamMembers)
   
   return (
-    <div className="App">
-      <header className="header">
+    <Container className="App">
+      <header>
         <h1>Lambda Dev Team</h1>
       </header>
         <div>
@@ -51,17 +84,17 @@ function App() {
           submit={formSubmit} 
           />
         </div>
-        <div>
+        <MemberObjs>
           {
             teamMembers.map(member => {
               
                 return (
-                <Member key={teamMembers.length + 1} details={member}/>
+                <Member key={member.name} details={member}/>
               )
             }
           )}
-        </div>
-    </div>
+        </MemberObjs>
+    </Container>
 )
 
 
